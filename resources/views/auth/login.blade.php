@@ -129,5 +129,4 @@
                 </button>
             </form>
         </section>
-</div>
 @endsection

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tailwind Login Template by David Grzyb</title>
-	<meta name="author" content="David Grzyb">
+    <title>Stock management system - login</title>
+	<meta name="author" content="Dahabu Mkawa">
     <meta name="description" content="">
 
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
