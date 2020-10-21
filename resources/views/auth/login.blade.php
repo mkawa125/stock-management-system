@@ -76,20 +76,57 @@
             <p class="text-gray-600 pt-2">Sign in to your account.</p>
         </section>
 
-        <section class="mt-10">
-            <form class="flex flex-col" method="POST" action="#">
-                <div class="mb-6 pt-3 rounded bg-gray-200">
-                    <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="email">Email</label>
-                    <input type="text" id="email" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3">
+        <section class="mt-1">
+            <form class="flex flex-col" method="POST" action="{{ route('login') }}">
+                
+                @csrf
+
+                <div class="mb-2 pt-3 rounded bg-white">
+                    <label class="block text-gray-700 text-sm bg-white mb-2" for="email">Email</label>
+                    <input type="email" 
+                        id="email"
+                        placeholder="Email"
+                        name="email"
+                        required
+                        autocomplete="email"
+                        autofocus
+                        class="rounded w-full text-gray-600 
+                                focus:outline-none border border-gray-300 
+                                focus:border-blue-600 transition 
+                                duration-500 px-3 pb-2 pt-2 text-sm
+                                @error('email') is-invalid @enderror">
+                    @error('email')
+                        <span class="text-red-700 text-sm" role="alert">
+                            <span>{{ $message }}</span>
+                        </span>
+                    @enderror
                 </div>
-                <div class="mb-6 pt-3 rounded bg-gray-200">
-                    <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="password">Password</label>
-                    <input type="password" id="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3">
+                <div class="mb-6 pt-3 rounded">
+                    <label class="block text-gray-700 text-sm mb-2" for="password">Password</label>
+                    <input type="password" 
+                        id="password"
+                        placeholder="Password"
+                        name="password"
+                        required
+                        class="rounded w-full border border-gray-300 
+                                text-gray-600 focus:outline-none 
+                                focus:border-blue-600 
+                                transition duration-500 px-3 pb-2 pt-2 text-sm">
+                    @error('password')
+                        <span class="text-red-700 text-sm" role="alert">
+                            <span>{{ $message }}</span>
+                        </span>
+                    @enderror
+
                 </div>
                 <div class="flex justify-end">
-                    <a href="#" class="text-sm text-purple-600 hover:text-purple-700 hover:underline mb-6">Forgot your password?</a>
+                    <a href="#" class="text-sm text-blue-600 hover:text-blue-700 hover:underline mb-6">Forgot your password?</a>
                 </div>
-                <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Sign In</button>
+                <button class="bg-blue-600 hover:bg-blue-700 
+                    text-white font-bold py-2 rounded shadow-lg 
+                    hover:shadow-xl transition duration-200" type="submit">
+                    Sign In
+                </button>
             </form>
         </section>
 </div>
