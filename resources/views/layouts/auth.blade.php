@@ -18,7 +18,7 @@
             /* background-image: linear-gradient(315deg, #F7F9F9 0%, #F7F9F9 74%); */
         }
         body{
-            overflow: hidden;
+            overflow: auto;
         }
     </style>
 </head>
